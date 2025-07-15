@@ -1,0 +1,30 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+
+# Hello API Gateway
+GET {{HostAddress}}
+
+###
+
+
+# Create a new order
+POST {{HostAddress}}/ordering-service/api/orders
+Content-Type: application/json
+
+{
+    "customerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "orderItems": [
+      {
+        "productId": "c67d6323-e8b1-4bdf-9a75-b0d0d2e7e914",
+        "quantity": 1,
+        "price": 32
+      },
+      {
+        "productId": "6ec1297b-ec0a-4aa1-be25-6726e3b51a27",
+        "quantity": 1,
+        "price": 8
+      }
+    ]
+}
+
+###
