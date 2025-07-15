@@ -6,18 +6,35 @@
 
 <details>
   <summary><strong>Inicializar os pods</strong></summary>
- 
+  
+### Criar o Banco de Dados
+  ```
+  kubectl apply -f .\k8s\mssql\pvc.yaml -f .\k8s\mssql\secret.yaml
+  kubectl apply -f .\k8s\mssql
+  ```
+
+  ### Criar o RabbitMQ
+  ```
+  kubectl apply -f .\k8s\rabbitmq\secret.yaml
+  kubectl apply -f .\k8s\rabbitmq
+  ```
+
   ### Criar a Observabilidade
   ```
-  kubectl apply -f .\observability\prometheus\pvc.yaml
-  kubectl apply -f .\observability\prometheus
-  kubectl apply -f .\observability\grafana\pvc.yaml
-  kubectl apply -f .\observability\grafana
+  kubectl apply -f .\k8s\observability\prometheus\pvc.yaml
+  kubectl apply -f .\k8s\observability\prometheus
+  kubectl apply -f .\k8s\observability\grafana\pvc.yaml
+  kubectl apply -f .\k8s\observability\grafana
   ```
-  
+
+  ### Criar os Microserviços
+
+Fazer os apply diretamente no diretório/repo de cada MS
+
+
   ### Criar a API Gateway
   ```
-  kubectl apply -f .\api-gateway
+  kubectl apply -f .\k8s
   ```
 </details>
 
