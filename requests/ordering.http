@@ -1,5 +1,6 @@
 # For more info on HTTP files go to https://aka.ms/vs/httpfile
 
+# @environment local
 
 # Hello API Gateway
 GET {{HostAddress}}
@@ -7,8 +8,19 @@ GET {{HostAddress}}
 ###
 
 
+# Essa requição será usada como variável para as demais requisições que usem o token
+# @name login
+POST {{HostAddress}}/api/auth/login/employee
+Content-Type: application/json
+{
+    "email": "employee@fasttech.com",
+    "password": "password123"
+}
+###
+
 # Create a new order
 POST {{HostAddress}}/ordering-service/api/orders
+Authorization: Bearer {{login.response.body.$.token}}
 Content-Type: application/json
 
 {
