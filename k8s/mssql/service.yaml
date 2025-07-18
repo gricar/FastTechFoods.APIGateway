@@ -1,0 +1,16 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-svc
+  labels:
+    app: fastTechFoods
+    service: database
+spec:
+  type: NodePort   # Azure DataStudio access
+  selector:
+    app: mssql
+  ports:
+    - protocol: TCP
+      port: 1433
+      targetPort: 1433
+      nodePort: 31433

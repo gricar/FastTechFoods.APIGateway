@@ -1,0 +1,29 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq-svc
+  labels:
+    app: fastTechFoods
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "15692"
+spec:
+  selector:
+    app: rabbitmq
+  type: NodePort
+  ports:
+    - name: amqp
+      protocol: TCP
+      port: 5672
+      targetPort: 5672
+      nodePort: 31671
+    - name: management
+      protocol: TCP
+      port: 15672
+      targetPort: 15672
+      nodePort: 31672
+    - name: metrics
+      protocol: TCP
+      port: 15692
+      targetPort: 15692
+      nodePort: 31692

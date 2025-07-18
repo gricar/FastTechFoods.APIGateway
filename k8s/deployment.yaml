@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  labels:
+    app: fastTechFoods
+    service: gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastTechFoods
+      service: gateway
+  template:
+    metadata:
+      labels:
+        app: fastTechFoods
+        service: gateway
+    spec:
+      containers:
+        - name: fasttechfoods-api-gateway
+          image: gricardo10/fasttechfoods-api-gateway
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ReverseProxy__Clusters__ordering-api-cluster__Destinations__http-destination__Address
+              valueFrom:
+                configMapKeyRef:
+                  name: api-gateway-config
+                  key: OrderingClusterAddress
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 35
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1"
