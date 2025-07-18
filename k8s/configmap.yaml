@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: api-gateway-config
 data:
+  KitchenClusterAddress: "http://kitchen-svc:8080"
   OrderingClusterAddress: "http://ordering-svc:8080"

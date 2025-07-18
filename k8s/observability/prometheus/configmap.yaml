@@ -20,6 +20,12 @@ data:
           - targets:
               - "ordering-svc.default.svc.cluster.local:8080"
 
+      - job_name: "kitchen-api"
+        metrics_path: /metrics
+        static_configs:
+          - targets:
+              - "kitchen-svc.default.svc.cluster.local:8080"
+
       - job_name: "rabbitmq"
         metrics_path: /metrics
         static_configs:

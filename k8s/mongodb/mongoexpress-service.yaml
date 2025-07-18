@@ -1,0 +1,16 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: mongoexpress-svc
+  labels:
+    app: fastTechFoods
+    service: database
+spec:
+  type: NodePort
+  selector:
+    app: mongoexpress
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+      nodePort: 30081

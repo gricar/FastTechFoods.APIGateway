@@ -1,5 +1,5 @@
 # Accept the new order
-@OrderId=9e15bb3b-5ec1-48a5-8624-cf9c8484c7d1
+@OrderId=4568968c-dfe6-4221-a14b-74205e5f4ddb
 PUT {{HostAddress}}/kitchen-service/api/orders/{{OrderId}}/accept
 
 ###

@@ -28,6 +28,11 @@ spec:
                 configMapKeyRef:
                   name: api-gateway-config
                   key: OrderingClusterAddress
+            - name: ReverseProxy__Clusters__kitchen-api-cluster__Destinations__http-destination__Address
+              valueFrom:
+                configMapKeyRef:
+                  name: api-gateway-config
+                  key: KitchenClusterAddress
           readinessProbe:
             httpGet:
               path: /
