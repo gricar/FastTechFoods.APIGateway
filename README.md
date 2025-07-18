@@ -7,10 +7,15 @@
 <details>
   <summary><strong>Inicializar os pods</strong></summary>
   
-### Criar o Banco de Dados
+### Criar o Banco de Dados SQL Server
   ```
   kubectl apply -f .\k8s\mssql\pvc.yaml -f .\k8s\mssql\secret.yaml
   kubectl apply -f .\k8s\mssql
+  ```
+
+### Criar o Banco de Dados Mongo
+  ```
+  kubectl apply -f .\k8s\mongodb\pvc.yaml -f .\k8s\mongodb
   ```
 
   ### Criar o RabbitMQ
