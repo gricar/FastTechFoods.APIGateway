@@ -15,8 +15,7 @@
 
 ### Criar o Banco de Dados Mongo
   ```
-  kubectl apply -f .\k8s\mongodb\secret.yaml -f .\k8s\mongodb\pvc.yaml
-  kubectl apply -f .\k8s\mongodb
+  kubectl apply -f .\k8s\mongodb\pvc.yaml -f .\k8s\mongodb
   ```
 
   ### Criar o RabbitMQ
