@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.IdentityModel.Tokens;
+using Prometheus;
 using System.Security.Claims;
 using System.Text;
 
@@ -64,17 +65,15 @@ builder.Services.AddControllers();
 var app = builder.Build();
 
 app.UseRouting();
-
+app.UseRateLimiter();
 app.UseAuthentication();
-
 app.UseAuthorization();
+app.UseMetricServer();
+app.UseHttpMetrics();
 
 app.MapControllers();
-
-app.UseRateLimiter();
+app.MapGet("/", () => "Hello World from API Gateway!");
 
 app.MapReverseProxy();
-
-app.MapGet("/", () => "Hello World from API Gateway!");
 
 app.Run();
