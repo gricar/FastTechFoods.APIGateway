@@ -1,6 +1,6 @@
 # For more info on HTTP files go to https://aka.ms/vs/httpfile
 
-# @environment local
+@environment kubernetes
 
 # Hello API Gateway
 GET {{HostAddress}}
@@ -38,5 +38,10 @@ Content-Type: application/json
       }
     ]
 }
+
+###
+
+# Prometheus Metrics
+GET {{HostAddress}}/metrics
 
 ###
