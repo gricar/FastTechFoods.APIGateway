@@ -77,3 +77,6 @@ Fazer os apply diretamente no diretório/repo de cada MS
   kubectl rollout restart deployment api-gateway
   ```
 </details>
+
+
+Mais informações na seção [Wiki](https://github.com/gricar/FastTechFoods.APIGateway/wiki/Monitoramento-com-Grafana)
