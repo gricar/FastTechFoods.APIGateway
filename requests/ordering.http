@@ -18,6 +18,12 @@ Content-Type: application/json
 }
 ###
 
+
+# Ordering Service Health Check
+POST {{HostAddress}}/ordering-service/health
+Authorization: Bearer {{login.response.body.$.token}}
+###
+
 # Create a new order
 POST {{HostAddress}}/ordering-service/api/orders
 Authorization: Bearer {{login.response.body.$.token}}
@@ -37,6 +43,18 @@ Content-Type: application/json
         "price": 8
       }
     ]
+}
+
+###
+
+
+# Cancel one order
+PUT {{HostAddress}}/ordering-service/api/orders/de91e5ca-b9f9-4479-9d37-bbcb3d08b5fc/cancel
+Authorization: Bearer {{login.response.body.$.token}}
+Content-Type: application/json
+{
+  "orderId": "de91e5ca-b9f9-4479-9d37-bbcb3d08b5fc",
+  "justification": "Customer requested cancellation"
 }
 
 ###
