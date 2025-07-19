@@ -79,4 +79,4 @@ Fazer os apply diretamente no diretório/repo de cada MS
 </details>
 
 
-Mais informações na seção [Wiki]([https://github.com/gricar/FastTechFoods.APIGateway/wiki/Monitoramento-com-Grafana](https://github.com/gricar/FastTechFoods.APIGateway/wiki/Diagrama-da-Arquitetura-Fast-Tech-Foods))
+Mais informações na seção [Wiki](https://github.com/gricar/FastTechFoods.APIGateway/wiki/Diagrama-da-Arquitetura-Fast-Tech-Foods)
