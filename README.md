@@ -3,6 +3,8 @@
 ### Descrição
 > É uma aplicação em arquitetura de microsserviços, utilizando o Kubernetes para gerenciamento de conteinerização, orquestração e escalabilidade.
 
+> [!IMPORTANT]
+> Video da apresentação do projeto no [Youtube](https://www.youtube.com/watch?v=HgO_LepcXxg)
 
 <details>
   <summary><strong>Inicializar os pods</strong></summary>
